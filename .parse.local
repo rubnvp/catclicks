@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "catclicks"
+    },
+    "catclicks": {
+      "applicationId": "CWHu8wCo0t8nofFZmWBPUDnK8F251d8igquxJxBD"
+    }
+  }
+}
