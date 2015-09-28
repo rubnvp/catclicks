@@ -21,18 +21,27 @@
     </head>
 
     <body ng-app="starter" ng-controller="AppCtrl">
-    <ul>
-      <li ng-repeat="cat in cats" ng-click="showCat(cat.id)">{{cat.name}}</li>
-    </ul>
-    <div>
-      <img ng-src="{{catView.img}}" ng-click="catclick(catView.id)">
-      <h2>{{catView.name}}</h2>
-      <div> Clicks: {{catView.clicks}}</div>
-    </div>
-    <!--<div ng-repeat="cat in cats" class="cat-list">      
-      <img ng-src="{{cat.img}}" ng-click="catclick(cat.id)">
-      <h2>{{cat.name}}</h2>
-      <div> Clicks: {{cat.clicks}}</div>
-    <div>-->
+      <!-- Cat list -->
+      <ul>
+        <li ng-repeat="cat in cats" ng-click="showCat(cat.id)">{{cat.name}}</li>
+      </ul>
+
+      <!-- Cat Display -->
+      <div>
+        <img ng-src="{{catView.img}}" ng-click="catclick(catView.id)">
+        <h2>{{catView.name}}</h2>
+        <div> Clicks: {{catView.clicks}}</div>
+      </div>
+
+      <!-- Edit Cat -->
+      <p> Admin options </p>
+      <button ng-click="adminMode()">Admin</button>
+      <div ng-hide="adminView">
+          Cat name: <input type="text" ng-model="catViewEdit.name"><br>
+          Cat picture: <input type="text" ng-model="catViewEdit.img"><br>
+          Cat clicks: <input type="number" ng-model="catViewEdit.clicks"><br>
+          <button ng-click="saveEditedCat()">Save</button>
+          <button ng-click="adminView=true">Cancel</button>
+      </div>
     </body>
 </html>
