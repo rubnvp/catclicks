@@ -21,9 +21,18 @@
     </head>
 
     <body ng-app="starter" ng-controller="AppCtrl">
-    <div ng-repeat="cat in cats">
-      <img ng-src="{{cat.img}}" ng-click="catclick(cat.id)">
-      <div> Number of clicks: {{cat.clicks}}</div>
+    <ul>
+      <li ng-repeat="cat in cats" ng-click="showCat(cat.id)">{{cat.name}}</li>
+    </ul>
     <div>
+      <img ng-src="{{catView.img}}" ng-click="catclick(catView.id)">
+      <h2>{{catView.name}}</h2>
+      <div> Clicks: {{catView.clicks}}</div>
+    </div>
+    <!--<div ng-repeat="cat in cats" class="cat-list">      
+      <img ng-src="{{cat.img}}" ng-click="catclick(cat.id)">
+      <h2>{{cat.name}}</h2>
+      <div> Clicks: {{cat.clicks}}</div>
+    <div>-->
     </body>
 </html>
